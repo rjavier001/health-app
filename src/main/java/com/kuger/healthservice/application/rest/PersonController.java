@@ -30,7 +30,6 @@ public class PersonController {
   @PostMapping("/person")
   public ResponseEntity<Person> createPerson(@RequestBody Person person) {
     try {
-//      Person _person = personService.save(new Person(person.getDni(),person.getFirstName(),person.getLastName(),person.getEmail(),person.getPhoneNum(),person.getAddress()));
       Person _person = personService.save(person);
       return new ResponseEntity<>(_person, HttpStatus.CREATED);
     } catch (Exception e) {
